@@ -6,3 +6,6 @@ A simple c# path finding script for 2D, hexagonal grid supported.
 
 ## hexagonal grid Y (grid staggered by column)
 ![image](https://user-images.githubusercontent.com/19882542/44308656-55afe400-a3ec-11e8-8186-c6760fb5d8cd.png)
+
+## example
+![sns5cr2hve](https://user-images.githubusercontent.com/19882542/44308746-cdcad980-a3ed-11e8-8c0f-d522076f2529.gif)
