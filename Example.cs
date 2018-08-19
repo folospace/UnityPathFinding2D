@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
+
 /**
  * 1.create a unity 2D project
  * 2.copy scripts to you project folder
@@ -113,15 +114,15 @@ public class Example : MonoBehaviour
     /**
      * simulate path finding in hexagonal grid tilemaps
      */
-    public void simPathFinding6(bool stretchRow = true)
+    public void simPathFinding6(bool staggerByRow = true)
     {
         StopAllCoroutines();
 
         //init map
-        var map = mapToDict6(generateMapArray(width, height), stretchRow);
+        var map = mapToDict6(generateMapArray(width, height), staggerByRow);
         var hexScale = scale + 4f; //addtional 4f makes tiles seperated
-        float xScale = stretchRow ? hexScale / 2 : hexScale;
-        float yScale = stretchRow ? hexScale : hexScale/2;
+        float xScale = staggerByRow ? hexScale / 2 : hexScale;
+        float yScale = staggerByRow ? hexScale : hexScale/2;
         renderMap(map, xScale, yScale);
 
         //init player and goal
@@ -136,7 +137,7 @@ public class Example : MonoBehaviour
 
         //find
         List<Vector2Int> path;
-        if (stretchRow) {
+        if (staggerByRow) {
             path = PathFinding2D.find6X(playerPos, goalPos, map, passableValues);
         } else {
             path = PathFinding2D.find6Y(playerPos, goalPos, map, passableValues);
